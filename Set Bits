@@ -1,0 +1,15 @@
+int countBits(int n){
+    string ans="";
+    while(n!=0){
+        int rem=n%2;
+        ans=to_string(rem)+ans;
+        n/=2;
+    }
+    int cnt=0;
+    for(int i=0;i<ans.length();i++){
+        if(ans[i]=='1'){
+            cnt++;
+        }
+    }
+return cnt;
+}
