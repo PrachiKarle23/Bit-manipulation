@@ -1,0 +1,23 @@
+#include <bits/stdc++.h> 
+string convert(long long N){
+	string ans="";
+	while(N!=1){
+		int rem=N%2;
+		ans=to_string(rem)+ans;
+		N/=2;
+	}
+	ans=to_string(N)+ans;
+	return ans;
+}
+bool checkPalindrome(long long N)
+{
+    string str=convert(N);
+	string str2=str;
+	reverse(str.begin(),str.end());
+	for(int i=0;i<str.length();i++){
+		if(str[i]!=str2[i]){
+			return false;
+		}
+	}
+	return true;
+}
