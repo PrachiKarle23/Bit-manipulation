@@ -1,0 +1,23 @@
+#include <bitset>
+#include<cmath>
+long binaryToDecimal(string binary) {
+    long decimal = 0;
+    int power = 0;
+    for (int i = binary.length() - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += pow(2, power);
+        }
+        power++;
+    }
+    return decimal;
+}
+long reverseBits(long n) {
+     if(n==0){
+         return 0;
+     }
+    bitset<32> bits(n);
+    string ans=bits.to_string();
+    reverse(ans.begin(),ans.end());
+    long res=binaryToDecimal(ans);
+    return res;
+}
