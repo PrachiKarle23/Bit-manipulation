@@ -1,0 +1,22 @@
+int countBit(int ans){
+        string str="";
+        while(ans!=1){
+            int rem=ans%2;
+            str=to_string(rem)+str;
+            ans/=2;
+        }
+        str=to_string(ans)+str;
+        int cnt=0;
+        for(int i=0;i<str.length();i++){
+            if(str[i]=='1'){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+    int countBitsFlip(int a, int b){
+        
+        int ans=a ^ b;
+        int res=countBit(ans);
+        return res;
+    }
