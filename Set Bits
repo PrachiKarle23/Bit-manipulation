@@ -13,3 +13,29 @@ int countBits(int n){
     }
 return cnt;
 }
+
+//gfg
+class Solution {
+  public:
+    int solve(int N)
+    {
+        int cnt=0;
+        vector<int>ans;
+        while(N!=0){
+            int rem=N%2;
+            ans.push_back(rem);
+            N/=2;
+        }
+        for(int i=0;i<ans.size();i++)
+        {
+            if(ans[i]==1){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+    int setBits(int N) {
+        // Write Your Code here
+        return solve(N);
+    }
+};
